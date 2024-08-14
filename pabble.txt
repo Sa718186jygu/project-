@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void bubbleSort(int arr[], int size) ;
+
+
+void print(int arr[], int size) ;
+
+
+
+int main() {
+    int arr[] = {-45, 77, 33, 1602, 88, 91, 1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    printf("after sort: \n");
+    print(arr, n);
+
+    bubbleSort(arr, n);
+
+    printf("befor sort: \n");
+    print(arr, n);
+
+    return 0;
+}
+void bubbleSort(int arr[], int size) {
+    int outter, inner, temp;
+    for (outter = 0; outter < size-1; outter++) {
+
+        for (inner = 0; inner < size-outter-1; inner++) {
+            if (arr[inner] > arr[inner+1]) {
+
+                temp = arr[inner];
+                arr[inner] = arr[inner+1];
+                arr[inner+1] = temp;
+            }
+        }
+    }
+}
+void print(int arr[], int size) {
+    int i;
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");}

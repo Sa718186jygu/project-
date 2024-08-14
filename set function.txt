@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+int set (int n1, int n2);
+int reset (int n3, int n4);
+int toggle (int n5, int n6);
+
+int main()
+{
+    int n=0b00101111;
+    int c1,c2,c3;
+    c1=set(n,4);
+    printf ("attend after set %x \n",c1);
+    c2=reset(n,4);
+    printf ("attend after reset %x \n",c2);
+    c3=toggle(n,4);
+    printf ("attend after toggle %x \n",c3);
+
+
+
+    return 0;
+}
+int set (int n1, int n2){
+
+return n1 | (1<<n2);
+}
+int reset (int n3, int n4){
+
+return   n3& ~(1<<n4);
+}
+int toggle (int n5, int n6){
+
+return  n5 ^(1<<n6);
+}
